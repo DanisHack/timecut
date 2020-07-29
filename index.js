@@ -79,6 +79,7 @@ module.exports = function (config) {
   var pipeMode = config.pipeMode;
   var processError;
   var outputPattern;
+  var screenshotType = config.screenshotType || 'png';
   var convertProcess, processPromise;
   if (frameMode) {
     if (!frameDirectory) {
@@ -88,13 +89,15 @@ module.exports = function (config) {
       frameDirectory = path.join(config.frameCache, frameDirectory);
     }
     frameDirectory = path.resolve(path.parse(output).dir, frameDirectory);
-    outputPattern = path.resolve(frameDirectory, 'image-%09d.png');
+    var frameNameFormat = 'image-%09d.'+screenshotType;
+    outputPattern = path.resolve(frameDirectory, frameNameFormat);
   } else {
     outputPattern = '';
   }
   var timesnapConfig = Object.assign({}, config, {
     output: '',
-    outputPattern: outputPattern
+    outputPattern: outputPattern,
+    screenshotType: screenshotType
   });
 
   if (config.fps) {

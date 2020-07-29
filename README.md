@@ -115,6 +115,8 @@ Opens https://tungs.github.io/truchet-tiles-original/#autoplay=true&switchStyle=
     * Duration of capture, in *seconds* (default: `5`).
 * <a name="cli-options-frames" href="#cli-options-frames">#</a> Frames: `--frames` *count*
     * Number of frames to capture.
+* <a name="cli-options-screenshot-type" href="#cli-options-screenshot-type">#</a> Screenshot Type: `--screenshot-type` *type*
+    * Output image format for the screenshots. By default, `png` is used. `jpeg` is also available.
 * <a name="cli-options-selector" href="#cli-options-selector">#</a> Selector: `-S`, `--selector` "*selector*"
     * Crops each frame to the bounding box of the first item found by the [CSS *selector*][CSS selector].
 * <a name="cli-options-viewport" href="#cli-options-viewport">#</a> Viewport: `-V`, `--viewport` *dimensions*
@@ -245,6 +247,7 @@ The Node API is structured similarly to the command line options, but there are 
     * <a name="js-config-fps" href="#js-config-fps">#</a> `fps` &lt;[number][]&gt; frame rate, in frames per virtual second, of capture (default: `60`).
     * <a name="js-config-duration" href="#js-config-duration">#</a> `duration` &lt;[number][]&gt; Duration of capture, in seconds (default: `5`).
     * <a name="js-config-frames" href="#js-config-frames">#</a> `frames` &lt;[number][]&gt; Number of frames to capture. Overrides default fps or default duration.
+    * <a name="js-config-screenshot-type" href="#js-config-screenshot-type">#</a> `screenshotType` &lt;[string][]&gt; Output image format for the screenshots. By default, `'png'` is used. `'jpeg'` is also available.
     * <a name="js-config-selector" href="#js-config-selector">#</a> `selector` &lt;[string][]&gt; Crops each frame to the bounding box of the first item found by the specified [CSS selector][].
     * <a name="js-config-frame-cache" href="#js-config-frame-cache">#</a> `frameCache` &lt;[string][]|[boolean][]&gt; Saves each frame temporarily to disk before ffmpeg processes it. If `config.frameCache` is a string, uses that as the directory to save the temporary files. If `config.frameCache` is a boolean `true`, temporarily creates a directory in the current working directory. See [cache frame mode](#cache-frame-mode).
     * <a name="js-config-pipe-mode" href="#js-config-pipe-mode">#</a> `pipeMode` &lt;[boolean][]&gt; Experimental. If set to `true`, pipes frames directly to ffmpeg, without saving to disk. See [pipe mode](#pipe-mode).

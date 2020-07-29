@@ -43,6 +43,7 @@ commander
   .option('-R, --fps <frame rate>', 'Frames per second to capture (default: 60)', parseFloat)
   .option('-d, --duration <seconds>', 'Duration of capture, in seconds (default: 5)', parseFloat)
   .option('--frames <count>', 'Number of frames to capture', parseInt)
+  .option('--screenshot-type <screenshotType>', 'Output image format for the screenshots. By default, png is used. jpeg is also available.')
   .option('-S, --selector <selector>', 'CSS Selector of item to capture')
   .option('-V, --viewport <dimensions>', 'Viewport dimensions, in pixels (e.g. 800,600)', function (str) {
     var dims = str.split(',').map(function (d) { return parseInt(d); });
@@ -85,4 +86,5 @@ commander
   .parse(process.argv);
 
 commander.url = commander.args[0] || 'index.html';
+console.log("commander", commander);
 recorder(commander);
